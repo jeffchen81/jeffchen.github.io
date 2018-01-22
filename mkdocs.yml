@@ -1,7 +1,0 @@
-site_name: Jeff Chen's Blog
-
-pages:
-    - Home: index.md
-
-theme: readthedocs
-
