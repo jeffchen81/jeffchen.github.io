@@ -1,28 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-     <loc>http://initcivi.com/</loc>
-     <lastmod>2018-09-19</lastmod>
+     <loc>None</loc>
+     <lastmod>2019-02-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://initcivi.com/devops/</loc>
-     <lastmod>2018-09-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>http://initcivi.com/devops/monitoring/</loc>
-     <lastmod>2018-09-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>http://initcivi.com/ref/markdown/</loc>
-     <lastmod>2018-09-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>http://initcivi.com/about/</loc>
-     <lastmod>2018-09-19</lastmod>
+     <loc>None</loc>
+     <lastmod>2019-02-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
