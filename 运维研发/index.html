@@ -7,11 +7,11 @@
         
         
         
-        <link rel="shortcut icon" href="/img/favicon.ico">
-        <title>Jeff的博客</title>
-        <link href="/css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="/css/font-awesome.min.css" rel="stylesheet">
-        <link href="/css/base.css" rel="stylesheet">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>简介 - Jeff的博客</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <script src="/js/jquery-1.10.2.min.js" defer></script>
-        <script src="/js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
@@ -39,7 +39,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/.">Jeff的博客</a>
+                    <a class="navbar-brand" href="..">Jeff的博客</a>
                 </div>
 
                 <!-- Expanded navigation -->
@@ -47,14 +47,14 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li >
-                                <a href="/.">首页</a>
+                                <a href="..">首页</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考手册 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="/参考手册/markdown/">Markdown语法</a>
+    <a href="../参考手册/markdown/">Markdown语法</a>
 </li>
                                 </ul>
                             </li>
@@ -63,24 +63,24 @@
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="/软件笔记/mkdocs/">MkDocs 静态网页生成</a>
+    <a href="../软件笔记/mkdocs/">MkDocs 静态网页生成</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">运维研发 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li >
-    <a href="/运维研发/">简介</a>
+<li class="active">
+    <a href="./">简介</a>
 </li>
                                     
 <li >
-    <a href="/运维研发/alarm/">告警服务</a>
+    <a href="alarm/">告警服务</a>
 </li>
                                     
 <li >
-    <a href="/运维研发/monitor/">监控体系</a>
+    <a href="monitor/">监控体系</a>
 </li>
                                 </ul>
                             </li>
@@ -92,21 +92,68 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li >
+                                <a rel="next" href="../软件笔记/mkdocs/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="alarm/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#_1">简介</a></li>
+            <li><a href="#_2">服务体系</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
 
-    <div class="row-fluid">
-      <div id="main-content" class="span12">
-        <h1 id="404-page-not-found" style="text-align: center">404</h1>
-        <p style="text-align: center"><strong>Page not found</strong></p>
-      </div>
-    </div>
-
-
+<h1 id="_1">简介</h1>
+<p>支持公司业务系统的应用运维工程师，帮助业务实现价值最大化。 "贴近业务，理解业务，挖掘业务的价值，扩展服务价值。"</p>
+<h2 id="_2">服务体系</h2>
+<p>运维研发工程师会跨业务生命周期的介入其中。</p>
+<table>
+<thead>
+<tr>
+<th>研发期</th>
+<th>运营期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>高可用架构设计</td>
+<td>持续集成和部署</td>
+</tr>
+<tr>
+<td></td>
+<td>高可用保障</td>
+</tr>
+<tr>
+<td></td>
+<td>数据服务</td>
+</tr>
+<tr>
+<td></td>
+<td>成本优化</td>
+</tr>
+<tr>
+<td></td>
+<td>产品运营支持</td>
+</tr>
+<tr>
+<td></td>
+<td>用户体验优化</td>
+</tr>
+</tbody>
+</table></div>
         </div>
 
         <footer class="col-md-12">
@@ -114,11 +161,11 @@
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = "/",
+            var base_url = "..",
                 shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
         </script>
-        <script src="/js/base.js" defer></script>
-        <script src="/search/main.js" defer></script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
