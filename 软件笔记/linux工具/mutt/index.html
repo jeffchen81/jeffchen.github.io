@@ -7,11 +7,11 @@
         
         
         
-        <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Markdown语法 - 初始文明路</title>
-        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Mutt 命令行邮件客户端 - 初始文明路</title>
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <script src="../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
@@ -39,7 +39,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="../..">初始文明路</a>
+                    <a class="navbar-brand" href="../../..">初始文明路</a>
                 </div>
 
                 <!-- Expanded navigation -->
@@ -47,31 +47,31 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li >
-                                <a href="../..">首页</a>
+                                <a href="../../..">首页</a>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考手册 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li class="active">
-    <a href="./">Markdown语法</a>
+<li >
+    <a href="../../../参考手册/markdown/">Markdown语法</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">软件笔记 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../../软件笔记/mkdocs/">MkDocs 静态网页生成</a>
+    <a href="../../mkdocs/">MkDocs 静态网页生成</a>
 </li>
                                     
   <li class="dropdown-submenu">
     <a href="#">Linux工具</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../软件笔记/linux工具/mutt/">Mutt 命令行邮件客户端</a>
+<li class="active">
+    <a href="./">Mutt 命令行邮件客户端</a>
 </li>
     </ul>
   </li>
@@ -82,15 +82,15 @@
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../../运维研发/">简介</a>
+    <a href="../../../运维研发/">简介</a>
 </li>
                                     
 <li >
-    <a href="../../运维研发/alarm/">告警服务</a>
+    <a href="../../../运维研发/alarm/">告警服务</a>
 </li>
                                     
 <li >
-    <a href="../../运维研发/monitor/">监控体系</a>
+    <a href="../../../运维研发/monitor/">监控体系</a>
 </li>
                                 </ul>
                             </li>
@@ -103,12 +103,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../..">
+                                <a rel="next" href="../../mkdocs/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../../软件笔记/mkdocs/">
+                                <a rel="prev" href="../../../运维研发/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -120,27 +120,84 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#markdown">Markdown语法</a></li>
-            <li><a href="#_1">常用语法</a></li>
+        <li class="main active"><a href="#mutt">Mutt 命令行邮件客户端</a></li>
+            <li><a href="#_1">安装</a></li>
+            <li><a href="#_4">使用</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="markdown">Markdown语法</h1>
-<h2 id="_1">常用语法</h2>
+<h1 id="mutt">Mutt 命令行邮件客户端</h1>
+<p>环境：Mac</p>
+<h2 id="_1">安装</h2>
 <ul>
-<li>链接 <code>[显示文本](目标URI)</code></li>
-<li>分段 <code>## H2段落标题</code></li>
-<li>列表 <code>* 列表项</code></li>
-<li>源码块 <kbd>`代码`</kbd></li>
-<li>引用 <code>&gt; 引用的文本</code></li>
-<li>表格</li>
+<li><code>brew install mutt msmtp getmail</code></li>
 </ul>
-<pre><code>第一列名 | 第二列名  
-:-----: | ------:
-居中行1 | 居右行1
-居中行1 | 居右行2
-</code></pre></div>
+<h3 id="_2">发邮件配置</h3>
+<ul>
+<li><code>msmtp --host=smtp.163.com  --port=25 --serverinfo</code>查询smtp服务支持的登入方式</li>
+<li>编辑发邮件配置<code>~/.msmtprc</code><blockquote>
+<pre><code>account     wy163  # 自定义账号
+host        smtp.163.com  # 发送smtp服务器域名
+from        chenqing24@163.com  # 发送者
+auth        login  # 登入方式，对应上面查到的
+user        xxx@163.com  # 登入服务器的账号
+password    ********  # 上面账号对应的密码
+account default : wy163  # 默认发送账号
+</code></pre>
+</blockquote>
+</li>
+<li><code>chmod 600 ~/.msmtprc</code></li>
+<li><code>which msmtp</code>确认发邮件代理的路径</li>
+<li>编辑邮件客户端配置<code>~/.muttrc</code><blockquote>
+<pre><code>set sendmail="/usr/local/bin/msmtp"
+set realname="xxx"  # 发信人名称
+set from="xxx@163.com"  # 默认的发信地址
+set envelope_from=yes  # 使用from域作为sender, 否则使用user@localhost
+set use_from=yes  # 自动生成from地址
+set editor="vim -nw"  # 设置使用的编辑器
+</code></pre>
+</blockquote>
+</li>
+<li><code>echo "hello world" | mutt -s "mail title" -- xxx@yyy.com</code>测试发送邮件给xxx@yyy.com</li>
+</ul>
+<h3 id="_3">收邮件配置</h3>
+<ul>
+<li><code>mkdir -p ~/Mail/inbox/{cur,new,tmp}</code>创建收件箱相关目录</li>
+<li>编辑收邮件配置<code>~/.getmail/getmailrc</code><blockquote>
+<pre><code>[retriever]
+# 邮箱的账户信息，用于收取邮件.
+type = SimplePOP3SSLRetriever
+server = pop.163.com
+username = xxx@163.com
+port = 995
+password = ********
+[destination]
+# 如何处理已经收取到的邮件
+type = Maildir
+path = ~/Mail/inbox/
+[option]
+# 默认为True, 每次执行getmail收取全部邮件, False表示只收取未收取过的邮件
+read_all = False
+# 本地删除服务器是否也删除邮件
+delete = False
+message_log = ~/.getmail/getmail.log
+</code></pre>
+</blockquote>
+</li>
+<li><code>getmail -n</code>收邮件测试</li>
+<li>编辑邮件客户端配置<code>~/.muttrc</code><blockquote>
+<pre><code># 收信配置
+set mbox_type=Maildir
+set folder=~/Mail/inbox
+set spoolfile=~/Mail/inbox/
+set header_cache=~/Mail/.hcache
+</code></pre>
+</blockquote>
+</li>
+</ul>
+<h2 id="_4">使用</h2>
+<p>TODO</p></div>
         </div>
 
         <footer class="col-md-12">
@@ -148,11 +205,11 @@
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = "../..",
+            var base_url = "../../..",
                 shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
         </script>
-        <script src="../../js/base.js" defer></script>
-        <script src="../../search/main.js" defer></script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
