@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>基于Vue的后台管理系统前端UI方案 - 初始文明路</title>
+        <title>SpiffWorkflow 工作流引擎 - 初始文明路</title>
         <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
@@ -74,8 +74,8 @@
     <a href="#">Js库</a>
     <ul class="dropdown-menu">
             
-<li class="active">
-    <a href="./">基于Vue的后台管理系统前端UI方案</a>
+<li >
+    <a href="../../js库/iview-admin/">基于Vue的后台管理系统前端UI方案</a>
 </li>
     </ul>
   </li>
@@ -98,8 +98,8 @@
     <a href="#">Py库</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../py库/spiff_workflow/">SpiffWorkflow 工作流引擎</a>
+<li class="active">
+    <a href="./">SpiffWorkflow 工作流引擎</a>
 </li>
     </ul>
   </li>
@@ -145,12 +145,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../../mkdocs/">
+                                <a rel="next" href="../../linux工具/ops_bash/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../../linux工具/mutt/">
+                                <a rel="prev" href="../../中间件/rocketmq/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -162,16 +162,41 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#vueui">基于Vue的后台管理系统前端UI方案</a></li>
-            <li><a href="#_1">参考</a></li>
+        <li class="main active"><a href="#spiffworkflow">SpiffWorkflow 工作流引擎</a></li>
+            <li><a href="#_1">特性</a></li>
+            <li><a href="#_2">安装</a></li>
+            <li><a href="#_3">定义一个工作流</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="vueui">基于Vue的后台管理系统前端UI方案</h1>
-<h2 id="_1">参考</h2>
+<h1 id="spiffworkflow">SpiffWorkflow 工作流引擎</h1>
+<h2 id="_1">特性</h2>
 <ul>
-<li><a href="https://github.com/iview/iview-admin">官方github</a></li>
+<li>遵循编制BPMN规范</li>
+<li>提供Py API</li>
+<li>开源授权：LGPL-3.0</li>
+</ul>
+<h2 id="_2">安装</h2>
+<pre><code>pip install SpiffWorkflow
+</code></pre>
+
+<h2 id="_3">定义一个工作流</h2>
+<h3 id="task">Task的状态流转</h3>
+<ul>
+<li>MAYBE: Task在未来可能执行，取决于某个ExclusiveChoice Task的输出结果</li>
+<li>LIKELY: 类似MAYBE，是ExclusiveChoice Task的默认选择</li>
+<li>FUTURE: 该Task确定在某个点会运行（除非该实例在Task执行前，被明确CANCELLED了）</li>
+<li>WAITING: (可选的)Task在执行中，还未完成；完成后转为READY</li>
+<li>READY: 当前Task的前提条件已经全部满足，准备执行</li>
+<li>COMPLETED: Task执行完成</li>
+<li>CANCELLED: Task被明确取消</li>
+</ul>
+<p><img alt="Task的状态流转" src="../state-diagram.png" /></p>
+<h3 id="_4">工作流的数据存储</h3>
+<ul>
+<li><strong>TaskSpec对象</strong>: 存流程规则，如果变化，则影响所有流程实例</li>
+<li><strong>Task对象</strong>: 流程中每个Task节点的数据</li>
 </ul></div>
         </div>
 
