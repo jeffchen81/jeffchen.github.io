@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>SVN 版本管理 - 初始文明路</title>
+        <title>常见运维面试题目 - 初始文明路</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -49,16 +49,16 @@
                             <li >
                                 <a href="../..">首页</a>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考手册 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../markdown/">Markdown语法</a>
+    <a href="../../参考手册/markdown/">Markdown语法</a>
 </li>
                                     
-<li class="active">
-    <a href="./">SVN 版本管理</a>
+<li >
+    <a href="../../参考手册/svn/">SVN 版本管理</a>
 </li>
                                 </ul>
                             </li>
@@ -134,28 +134,28 @@
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">运维研发 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../../运维研发/">简介</a>
+    <a href="../">简介</a>
 </li>
                                     
 <li >
-    <a href="../../运维研发/alarm/">告警服务</a>
+    <a href="../alarm/">告警服务</a>
 </li>
                                     
 <li >
-    <a href="../../运维研发/env_build/">Env build</a>
+    <a href="../env_build/">Env build</a>
 </li>
                                     
 <li >
-    <a href="../../运维研发/monitor/">监控体系</a>
+    <a href="../monitor/">监控体系</a>
 </li>
                                     
-<li >
-    <a href="../../运维研发/ops_interview/">常见运维面试题目</a>
+<li class="active">
+    <a href="./">常见运维面试题目</a>
 </li>
                                 </ul>
                             </li>
@@ -168,12 +168,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../markdown/">
+                                <a rel="next" href="../monitor/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
-                            <li >
-                                <a rel="prev" href="../../经济金融/基金/">
+                            <li class="disabled">
+                                <a rel="prev" >
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -185,24 +185,147 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#svn">SVN 版本管理</a></li>
-            <li><a href="#_1">常用命令</a></li>
-            <li><a href="#_2">参考</a></li>
+        <li class="main active"><a href="#_1">常见运维面试题目</a></li>
+            <li><a href="#_2">配管</a></li>
+            <li><a href="#_3">负载均衡</a></li>
+            <li><a href="#web">Web服务</a></li>
+            <li><a href="#_4">存储</a></li>
+            <li><a href="#_5">变更与发布</a></li>
+            <li><a href="#_6">网络</a></li>
+            <li><a href="#_7">中间件</a></li>
+            <li><a href="#_8">数据库</a></li>
+            <li><a href="#bash">常用bash</a></li>
+            <li><a href="#_9">操作系统</a></li>
+            <li><a href="#_10">个人学习</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="svn">SVN 版本管理</h1>
-<h2 id="_1">常用命令</h2>
+<h1 id="_1">常见运维面试题目</h1>
+<h2 id="_2">配管</h2>
 <ul>
-<li>检出项目<code>svn checkout http://IP:Port/svn/docs/&lt;项目路径&gt;/ --username=&lt;用户名&gt;</code></li>
-<li>添加文件<code>svn add &lt;文件|目录&gt;</code></li>
-<li>提交远端服务器<code>svn commit -m 'commit msg'</code></li>
+<li>现有100台服务器，该如何管理？</li>
+<li>设定跳板机，使用统一账号登录，便于安全</li>
+<li>使用ansiable、puppet进行系统的统一调度与配置</li>
+<li>建立服务器的系统、配置、应用的cmdb信息管理。便于查阅各种信息记录</li>
 </ul>
-<h2 id="_2">参考</h2>
+<h2 id="_3">负载均衡</h2>
 <ul>
-<li><a href="http://www.runoob.com/svn/svn-tutorial.html">SVN 教程|菜鸟教程</a></li>
-</ul></div>
+<li>LVS、Nginx、HAproxy有什么区别和选择？</li>
+<li>LVS： 是基于四层的转发，限端口</li>
+<li>HAproxy： 是基于四层和七层的转发</li>
+<li>Nginx： 是WEB服务器，缓存服务器，又是反向代理服务器，可以做七层的转发</li>
+<li>大并发量的时候我们就要选择LVS；并发量没那么大选择HAproxy或者Nginx足已</li>
+<li>Keepalived的工作原理？</li>
+<li>一个虚拟路由器中，只有作为MASTER的VRRP路由器会一直发送VRRP通告</li>
+<li>当MASTER不可用时(BACKUP收不到通告信息)，多台BACKUP中优先级最高的这台会被抢占为MASTER(&lt;1s)，以保证服务的连续性</li>
+<li>VRRP包使用了加密协议进行加密。BACKUP不会发送通告信息</li>
+<li>LVS三种模式？</li>
+<li>NAT模式：把客户端发来的数据包的IP头的目的地址，在负载均衡器上换成其中一台RS的IP地址，并发至此RS来处理；RS处理完后把数据交给负载均衡器,负载均衡器再把数据包原IP地址改为自己的IP<ul>
+<li>优点：只有负载均衡器需要一个合法的IP地址</li>
+<li>缺点：扩展性有限，负载均衡器将成为整个系统的瓶颈（大量的数据包都交汇在负载均衡器）</li>
+</ul>
+</li>
+<li>TUN隧道模式：把客户端发来的数据包，封装一个新的IP头标记(仅目的IP)发给RS；RS（内核必须支持IPTUNNEL协议）收到后,先把数据包的头解开,还原数据包,处理后,直接返回给客户端,不需要再经过LB<ul>
+<li>优点：能处理很巨大的请求量，LB不是瓶颈</li>
+<li>缺点：RS节点需要合法IP，所有的服务器支持”IP Tunneling”协议</li>
+</ul>
+</li>
+<li>DR直接路由模式：LB和RS都使用同一个IP对外服务，只有DR对ARP请求进行响应（所有RS对这个IP的ARP请求保持静默）；DR收到数据包后根据调度算法,找出对应的RS,把目的MAC地址改为RS的MAC，并将请求分发给这台RS；RS直接返回数据（IP一样）；LB和RS在同一台交换机下<ul>
+<li>优点：能处理很巨大的请求量，应答包通过单独的路由方法返回给客户端</li>
+<li>缺点：LB的网卡必须与物理网卡在一个物理网段上</li>
+</ul>
+</li>
+<li>常用的Nginx模块?</li>
+<li>rewrite模块，实现重写</li>
+<li>access模块：来源控制</li>
+<li>ssl模块：安全加密</li>
+<li>ngx_http_gzip_module：网络传输压缩模块</li>
+<li>ngx_http_proxy_module 模块实现代理</li>
+<li>ngx_http_upstream_module模块实现定义后端服务器列表</li>
+</ul>
+<h2 id="web">Web服务</h2>
+<ul>
+<li>Tomcat8005、8009、8080三个端口的含义</li>
+<li>8005：关闭使用</li>
+<li>8009：AJP端口，即容器使用，如Apache能通过AJP协议访问Tomcat的8009端口</li>
+<li>8080：应用使用</li>
+<li>CDN？</li>
+<li>内容分发网络，通过在现有的Internet中增加一层新的网络架构，将网站的内容发布到最接近用户的网络边缘，使用户可就近取得所需的内容，提高用户访问网站的速度</li>
+</ul>
+<h2 id="_4">存储</h2>
+<ul>
+<li>raid0 raid1 raid5 工作原理及特点？</li>
+<li>RAID 0，可以是一块盘和N个盘组合，优点读写快，缺点：没有冗余，一块坏了数据就全没有了</li>
+<li>RAID 1，只能2块盘，盘的大小可以不一样，以小的为准，100%的冗余，缺点：浪费资源</li>
+<li>RAID 5 ，3块盘，容量计算10*（n-1）,损失一块盘，读性能一般，写不好</li>
+<li>单台服务器：系统盘，RAID1</li>
+<li>数据库服务器：主库：RAID10 从库 RAID5</li>
+</ul>
+<h2 id="_5">变更与发布</h2>
+<ul>
+<li>灰度发布？</li>
+<li>黑与白之间，能够平滑过渡的一种发布方式，如AB Test，可以保证整体系统的稳定，在初始灰度的时候就可以发现、调整问题，以保证其影响度</li>
+</ul>
+<h2 id="_6">网络</h2>
+<ul>
+<li>DNS进行域名解析的过程？</li>
+<li>本机的host文件--&gt;本地设置的DNS服务器--&gt;网络中找根服务器--&gt;一级域名服务器.cn--&gt;二级域名服务器.com.cn--&gt;三级域名服务器.baidu.com.cn，正好有这个网站www.baidu.com，然后发给请求的服务器，保存一份之后，再发给客户端</li>
+</ul>
+<h2 id="_7">中间件</h2>
+<ul>
+<li>RabbitMQ？</li>
+<li>消息中间件是在消息的传息过程中保存消息的容器；目的是提供路由并保证消息的传递；如果发送消息时接收者不可用消息队列不会保留消息，直到可以成功地传递为止，有时限</li>
+</ul>
+<h2 id="_8">数据库</h2>
+<ul>
+<li>mysql如何减少主从复制延迟？可能原因？</li>
+<li>从库硬件比主库差</li>
+<li>慢SQL语句过多</li>
+<li>网络延迟</li>
+<li>主库读写压力大，建议前端加Cache</li>
+<li>多台slave来分摊读请，其中1台专用于备份</li>
+<li>重置mysql root密码？</li>
+<li>本机sh下：<code>mysqladmin –u root –p password "新密码"</code></li>
+<li>mysql&gt;环境中：<code>Update  mysql.user  set  password=password('新密码')  where  user='root';flush privileges;</code>或者<code>grant  all  on  *.*  to   root@'localhost' identified by '新密码'；</code></li>
+<li>忘记root密码时：<ul>
+<li>停止服务<code>service  mysqld  stop</code></li>
+<li>安全模式<code>mysql/bin/mysqld_safe  --skip-grant-table &amp;</code></li>
+<li>用空密码的root用户登录<code>mysql -u root</code>，后同上</li>
+</ul>
+</li>
+<li>mysql数据备份?</li>
+<li><code>mysql/bin/mysqldump</code>：支持热备，逻辑备份，速度不快，适合数据比较小场景</li>
+<li>LVM快照：只能进行泠备份</li>
+<li>tar包备份</li>
+</ul>
+<h2 id="bash">常用bash</h2>
+<ul>
+<li>分析nginx访问日志，找出访问页面数量在前十位的ip: <code>cat access.log | awk '{print $1}' | uniq -c | sort -rn | head -10</code></li>
+<li>监听主机为192.168.1.1，tcp端口为80的数据，同时将输出结果保存输出到tcpdump.log: <code>tcpdump 'host 192.168.1.1 and port 80' &gt; tcpdump.log</code></li>
+<li>本地80 端口的请求转发到8080 端口，当前主机IP 为192.168.2.1: <code>iptables -A PREROUTING -d 192.168.2.1 -p tcp -m tcp -dport 80 -j DNAT-to-destination 192.168.2.1:8080</code></li>
+<li>实时抓取并显示当前系统中tcp 80端口的网络数据: <code>tcpdump -nn tcp port 80</code></li>
+<li>查看http的并发请求数与其TCP连接状态: <code>netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'</code></li>
+<li>命令取出 linux 中 eth0 的 IP: <code>ifconfig eth0|awk 'NR==2'|awk -F ":" '{print $2}'|awk '{print $1}'</code></li>
+<li>每天晚上 12 点，打包站点目录/var/www/html 备份到/data 目录下:<br />
+<code>cd /var/www/ &amp;&amp; /bin/tar zcf /data/html-`date +%m-%d%H`.tar.gz html/</code>,使用crontab</li>
+</ul>
+<h2 id="_9">操作系统</h2>
+<ul>
+<li>优化Linux系统？</li>
+<li>不用root，添加普通用户，通过sudo授权</li>
+<li>更改默认的远程连接SSH服务端口及禁止root用户远程</li>
+<li>定时自动更新服务器时间</li>
+<li>配置国内yum源</li>
+<li>关闭selinux及iptables，但是工作场景如果有外网IP一定要打开</li>
+<li>调整文件描述符的数量</li>
+<li>精简开机启动服务（crond rsyslog network sshd）</li>
+<li>内核参数优化（/etc/sysctl.conf）</li>
+<li>更改字符集，支持中文，但建议还是用英文字符集，防止乱码</li>
+<li>锁定关键系统文件</li>
+<li>清空/etc/issue，去除系统及内核版本登录前的屏幕显示</li>
+</ul>
+<h2 id="_10">个人学习</h2></div>
         </div>
 
         <footer class="col-md-12">
