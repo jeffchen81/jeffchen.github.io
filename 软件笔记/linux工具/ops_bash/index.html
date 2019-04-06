@@ -132,6 +132,10 @@
 </li>
             
 <li >
+    <a href="../../中间件/rabbitmq/">RabbitMQ消息中间件</a>
+</li>
+            
+<li >
     <a href="../../中间件/rocketmq/">RocketMQ 分布式MQ和流平台</a>
 </li>
     </ul>
@@ -190,13 +194,14 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#_1">常用运维命令</a></li>
-            <li><a href="#_2">查询主机信息</a></li>
+            <li><a href="#_2">查询信息</a></li>
+            <li><a href="#_3">快速执行</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h1 id="_1">常用运维命令</h1>
-<h2 id="_2">查询主机信息</h2>
+<h2 id="_2">查询信息</h2>
 <ul>
 <li><code>grep 'processor' /proc/cpuinfo | sort -u | wc -l</code>查询主机逻辑CPU总核数</li>
 <li><code>free -m</code>内存状态（单位M）</li>
@@ -206,6 +211,13 @@
 <li><code>ps aux|grep java|grep -v grep|wc -l</code>当前java进程总数，排除grep干扰</li>
 <li><code>ifconfig eth0 | grep "inet addr:" | awk '{print $2}' | cut -c 6-</code>查询主机eth0上的IP</li>
 <li><code>netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'</code>按状态查询主机上TCP连接数</li>
+<li><code>du -s * | sort -nr | head</code>选出文件夹大小，并按大小进行排序，前面的10个</li>
+<li><code>watch -n 60 -d 'ls -l -rt | tail'</code>找到当前目录最新的10个文件，1分钟刷新一次</li>
+</ul>
+<h2 id="_3">快速执行</h2>
+<ul>
+<li><code>for i in `find /opt/*/bin/nohup.out`; do cat /dev/null &gt; $i; done</code>找到批量nohup.out，并清除内容</li>
+<li><code>find /opt/ -ctime +7 -name "trace*.log" | xargs rm -f</code>找到7天以前的log文件，并删除</li>
 </ul></div>
         </div>
 
