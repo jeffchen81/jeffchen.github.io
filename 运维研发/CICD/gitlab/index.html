@@ -177,6 +177,10 @@
 <li class="active">
     <a href="./">Gitlab版本管理</a>
 </li>
+            
+<li >
+    <a href="../redmine/">Redmine需求管理平台</a>
+</li>
     </ul>
   </li>
                                     
@@ -205,7 +209,7 @@
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../../监控告警/grafana/">
+                                <a rel="prev" href="../redmine/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -220,8 +224,7 @@
         <li class="main active"><a href="#gitlab">Gitlab版本管理</a></li>
             <li><a href="#_1">参考</a></li>
             <li><a href="#docker">安装（基于docker）</a></li>
-            <li><a href="#_2">备份数据</a></li>
-            <li><a href="#_3">从备份中恢复</a></li>
+            <li><a href="#_2">备份和恢复</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -279,15 +282,15 @@ services:
 </ul>
 <h3 id="ldap">集成ldap认证</h3>
 <h3 id="mail">配置mail服务</h3>
-<h2 id="_2">备份数据</h2>
-<pre><code class="bash"># 在docker中执行
+<h2 id="_2">备份和恢复</h2>
+<p>官方版：</p>
+<pre><code class="bash"># 备份，在docker中执行
 gitlab-rake gitlab:backup:create
 # 在/var/opt/gitlab/backups中生成类似：1555502732_2019_04_17_10.2.8_gitlab_backup.tar
 </code></pre>
 
 <p><img alt="gitlab备份" src="../gitlab_backup.png" /></p>
-<h2 id="_3">从备份中恢复</h2>
-<pre><code class="bash"># 停止服务
+<pre><code class="bash"># 从备份中恢复，先停止服务
 gitlab-ctl stop unicorn
 gitlab-ctl stop sidekiq
 # 从指定编号备份中恢复
@@ -297,7 +300,15 @@ gitlab-ctl start
 </code></pre>
 
 <p><img alt="gitlab恢复1" src="../gitlab_rollback.png" />
-<img alt="gitlab恢复2" src="../gitlab_rollback_start.png" /></p></div>
+<img alt="gitlab恢复2" src="../gitlab_rollback_start.png" /></p>
+<p>暴力版：</p>
+<pre><code class="bash"># 停docker，备份，直接把data打包，生成类似：gitback-2019-04-18.tar.gz
+tar -zcvf /backup/data/gitback-${DATE}.tar.gz -C /data/
+
+# 恢复，再重启docker
+tar -xf gitback-2019-04-18.tar.gz -C /data/
+docker-compose up -d
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">
