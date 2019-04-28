@@ -175,6 +175,10 @@
     <ul class="dropdown-menu">
             
 <li >
+    <a href="../cmdbuild/">CMDBuild配置管理平台</a>
+</li>
+            
+<li >
     <a href="../gitlab/">Gitlab版本管理</a>
 </li>
             
@@ -256,7 +260,7 @@ GRANT ALL PRIVILEGES ON redmine.* TO 'redmine'@'localhost';
 </code></pre>
 
 <p>退出db后，在容器中继续：</p>
-<pre><code class="bash"># 导入原sqldump，要求库先存在
+<pre><code class="bash"># （可选，恢复数据）导入原sqldump，要求库先存在
 mysql -uroot -padmin123 redmine &lt; ./redmine_bak.sql
 
 # 启动Redmine
@@ -266,6 +270,9 @@ docker run \
     --link mysql:mysql \
     -p 8080:3000 \
     redmine:3.2.1
+
+# （可选，数据备份）
+mysqldump -uroot -padmin123 redmine &gt; /backup/redmine_`date +&quot;%Y-%m-%d&quot;`.sql
 </code></pre></div>
         </div>
 
