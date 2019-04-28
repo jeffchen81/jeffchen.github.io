@@ -901,6 +901,7 @@
 <li><code>netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'</code>按状态查询主机上TCP连接数</li>
 <li><code>du -s * | sort -nr | head</code>选出文件夹大小，并按大小进行排序，前面的10个</li>
 <li><code>watch -n 60 -d 'ls -l -rt | tail'</code>找到当前目录最新的10个文件，1分钟刷新一次</li>
+<li><code>dd if=/dev/zero of=test bs=1M count=10000 oflag=direct</code>测试磁盘IO，写test,1个M一次，10000次，采用直接IO方式</li>
 </ul>
 <h2 id="_3">快速执行</h2>
 <ul>

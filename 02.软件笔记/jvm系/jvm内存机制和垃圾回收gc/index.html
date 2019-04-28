@@ -347,9 +347,89 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#java" title="Java应用启动举例" class="md-nav__link">
-    Java应用启动举例
+  <a href="#jvm" title="JVM内存基础" class="md-nav__link">
+    JVM内存基础
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jvm_1" title="JVM堆" class="md-nav__link">
+    JVM堆
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2gjvm" title="一个2G堆大小的JVM，可能总共占用多少内存的？" class="md-nav__link">
+    一个2G堆大小的JVM，可能总共占用多少内存的？
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gc" title="垃圾回收GC" class="md-nav__link">
+    垃圾回收GC
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="案例" class="md-nav__link">
+    案例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="小结" class="md-nav__link">
+    小结
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#java" title="Java启动参数" class="md-nav__link">
+    Java启动参数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="参数定义" class="md-nav__link">
+    参数定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="回收算法" class="md-nav__link">
+    回收算法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -845,9 +925,89 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#java" title="Java应用启动举例" class="md-nav__link">
-    Java应用启动举例
+  <a href="#jvm" title="JVM内存基础" class="md-nav__link">
+    JVM内存基础
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jvm_1" title="JVM堆" class="md-nav__link">
+    JVM堆
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2gjvm" title="一个2G堆大小的JVM，可能总共占用多少内存的？" class="md-nav__link">
+    一个2G堆大小的JVM，可能总共占用多少内存的？
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gc" title="垃圾回收GC" class="md-nav__link">
+    垃圾回收GC
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="案例" class="md-nav__link">
+    案例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="小结" class="md-nav__link">
+    小结
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#java" title="Java启动参数" class="md-nav__link">
+    Java启动参数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="参数定义" class="md-nav__link">
+    参数定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="回收算法" class="md-nav__link">
+    回收算法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -875,8 +1035,169 @@
                 
                 
                 <h1 id="jvmgc">JVM内存机制和垃圾回收GC</h1>
-<h2 id="java">Java应用启动举例</h2>
-<pre><code class="bash"># 纯jar启动，适用JDK7
+<h2 id="jvm">JVM内存基础</h2>
+<h3 id="jvm_1">JVM堆</h3>
+<p>Java对象的活动空间，程序中的类的对象从中分配空间，其存储着正在运行着的应用程序用到的所有对象。
+对象的建立方式就是那些new一类的操作，当对象无用后，是GC来负责这个无用的对象。</p>
+<p>分类：</p>
+<ul>
+<li>新域：存储所有新成生的对象</li>
+<li>Eden:</li>
+<li>From Space: 简称A空间</li>
+<li>To Space: 简称B空间</li>
+<li>旧域：新域中的对象，经过了一定次数的GC循环后，被移入旧域</li>
+<li>永久域：存储类和方法对象，从配置的角度看，这个域是独立的，不包括在JVM堆内。默认为4M。</li>
+</ul>
+<p><img alt="JVM堆结构示意图" src="../HeapStruOfJvm.jpg" /></p>
+<h4 id="2gjvm">一个2G堆大小的JVM，可能总共占用多少内存的？</h4>
+<ul>
+<li>堆内存 ＋ 线程数 ＊ 线程栈 ＋ 永久代 ＋ 二进制代码 ＋ 堆外内存</li>
+<li>堆内存： 存储Java对象，默认为物理内存的1/64</li>
+<li>线程栈： 存储局部变量（原子类型，引用）及其他，默认为1M</li>
+<li>永久代： 存储类定义及常量池，注意JDK7/8的区别</li>
+<li>二进制代码：JDK7与8，打开多层编译时的默认值不一样，从48到240M</li>
+<li>堆外内存： 被Netty，堆外缓存等使用，默认最大值约为堆内存大小</li>
+</ul>
+<p>堆内存设置为2G，那一个有1000个线程的JVM可能需要:<code>2G + 1000 * 1M + 256M + 48/240M + (～2G) = 5.5G (3.5G)</code></p>
+<h3 id="gc">垃圾回收GC</h3>
+<p>目的：在堆中，找到已经无用的对象，并把这些对象占用的空间收回使其可以重新利用。</p>
+<p>算法思路：</p>
+<ul>
+<li>把所有对象组成一个树状结构集合</li>
+<li>从树根开始找，只要可以找到的都是活动对象，如果找不到，这个对象就应该被回收</li>
+<li>对于新域(MinorGC)，采用coping算法(copy collect)，目的是为了克服句柄的开销和解决堆碎片的垃圾回收</li>
+<li>开始时把堆划分为一块较大的Eden和二块较小的Survior区域（From Space和To Space），在Hotspot中，默认比例是8:1:1</li>
+<li>对于新生成的对象，都放在Eden中；当Eden充满时，GC开始:<ul>
+<li>首先停止应用程序的运行，开始GC，从根集中扫描活动对象，把所有可找到的对象都复制到A空间中，然后Eden会清空，实践表明98％的新生代的对象都是朝生夕死</li>
+<li>一旦当A空间充满，GC就把在A空间中可找到的对象都复制到B空间中(会覆盖原有的存储对象，活动对象所占的内存之间没有空闲洞)</li>
+<li>当B空间满的时间，GC就把在B空间中可找到的对象都复制到A空间中，AB在这个过程中互换角色</li>
+<li>活动对象经过一定次数（小于-XX:MaxTenuringThreshold(默认为 31 次)次）的GC操作后，就会被放到旧域中</li>
+</ul>
+</li>
+<li>对于旧域(MajorGC/FullGC)，采用tracing算法的一种(mark sweep/mark compatc)，称为标记-清除-压缩收集器，注意，压缩，这是个开销挺大的操作，用户线程都会被block</li>
+</ul>
+<p><img alt="GC过程示意图" src="../gc.png" /></p>
+<h4 id="_1">案例</h4>
+<pre><code class="bash"># 内存监控的方法
+jmap -heap 2343
+Attaching to process ID 2343, please wait...
+Debugger attached successfully.
+Server compiler detected.
+JVM version is 11.0-b16
+
+using thread-local object allocation.
+Parallel GC with 8 thread(s)
+
+Heap Configuration:
+   MinHeapFreeRatio = 40
+   MaxHeapFreeRatio = 70
+   MaxHeapSize      = 4294967296 (4096.0MB)
+   NewSize          = 2686976 (2.5625MB)
+   MaxNewSize       = -65536 (-0.0625MB)
+   OldSize          = 5439488 (5.1875MB)
+   NewRatio         = 2                  （YG，OG 大小比为1：2）
+   SurvivorRatio    = 8
+   PermSize         = 21757952 (20.75MB)
+   MaxPermSize      = 268435456 (256.0MB)
+
+Heap Usage:
+PS Young Generation
+Eden Space:
+   capacity = 1260060672 (1201.6875MB)
+   used     = 64868288 (61.86322021484375MB)
+   free     = 1195192384 (1139.8242797851562MB)
+   5.148028935546367% used
+From Space:
+   capacity = 85524480 (81.5625MB)
+   used     = 59457648 (56.70323181152344MB)
+   free     = 26066832 (24.859268188476562MB)
+   69.52120375359195% used
+To Space:
+   capacity = 85852160 (81.875MB)
+   used     = 0 (0.0MB)
+   free     = 85852160 (81.875MB)
+   0.0% used
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~这三块为上面所说的YG大小和使用情况
+PS Old Generation
+   capacity = 2291138560 (2185.0MB)
+   used     = 1747845928 (1666.8757705688477MB)
+   free     = 543292632 (518.1242294311523MB)
+   76.28722062099989% used
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~OG大小和使用情况
+PS Perm Generation
+   capacity = 108265472 (103.25MB)
+   used     = 107650712 (102.6637191772461MB)
+   free     = 614760 (0.5862808227539062MB)
+   99.43217353728436% used
+
+# 这台机器简单说YG内存1G，OG内存2G，总内存4G
+# 在这样的配置下，GC运行情况：
+jstat -gcutil -h5 2343 4s 100
+  S0     S1     E      O      P     YGC     YGCT    FGC    FGCT     GCT  
+ 79.82   0.00  75.34  78.55  99.44   7646 1221.668   398 2052.993 3274.661
+  0.00  79.52   0.62  78.63  99.44   7647 1221.782   398 2052.993 3274.775 # 这里发生了一次YG GC，也就是MinorGC，耗时0.12s
+  0.00  79.52  28.95  78.63  99.44   7647 1221.782   398 2052.993 3274.775
+  0.00  79.52  46.34  78.63  99.44   7647 1221.782   398 2052.993 3274.775
+</code></pre>
+
+<p>同时可以看到总共进行了398次Major GC 总耗时2052.993 所以每次Major GC时间为：2052.993/398=5.16秒
+这是个很严重的问题，进行Major GC的时候程序会暂停，无法响应，居然会暂停5秒多!
+同样Minor GC进行了7647次，总用时1221.782 平均时间为0.16秒，算是可以接受</p>
+<h3 id="_2">小结</h3>
+<ul>
+<li>JVM堆的大小决定了GC的运行时间。如果JVM堆的大小超过一定的限度，那么GC的运行时间会很长。</li>
+<li>对象生存的时间越长，GC需要的回收时间也越长，影响回收速度。</li>
+<li>大多数对象都是短命的，所以，尽可能让这些对象的生存期在GC的一次运行周期内</li>
+<li>应用程序中，建立与释放对象的速度决定了垃圾收集的频率。</li>
+<li>如果GC一次运行周期超过3-5秒，这会很影响应用程序的运行，如果可以，应该减少JVM堆的大小。</li>
+<li>通常情况下，JVM堆的大小应为物理内存的80%（经验值）</li>
+</ul>
+<h2 id="java">Java启动参数</h2>
+<h3 id="_3">参数定义</h3>
+<ul>
+<li>Xss：每个线程的stack大小（栈），默认每条线程为1M，存放方法调用出参入参的栈、局部变量、标量替换后的局部变量等</li>
+<li>设小点节约内存开更多线程，OS对一个进程内的线程数有限制，不能无限生成，经验值在3000~5000</li>
+<li>有JSON解析之类的递归调用时不能设太小</li>
+<li>Xmx：JAVA HEAP的最大值、默认为物理内存的1/4（只有运行在 server 模式下的时候才是 min(1G, 物理内存的四分之一)）</li>
+<li><code>-Xms2g -Xmx2g</code>比较合适的数值是2-4g，再大就得考虑GC时间</li>
+<li>Xms：JAVA HEAP的初始值，默认为物理内存的1/64，server端最好Xms与Xmx一样</li>
+<li>Xmn：JAVA HEAP young区的大小，默认新生代占堆内存大小的1/3（-XX:NewRatio=2）</li>
+<li><code>-Xmn1g 或 -XX:NewRatio=1</code></li>
+<li><code>-XX:NewRatio=4</code>设置年轻代（包括Eden和两个Survivor区）与年老代的比值（除去持久代）。设置为4，则年轻代与年老代所占比值为1:4，年轻代占整个堆栈的1/5</li>
+<li><code>-XX:SurvivorRatio=4</code>设置年轻代中Eden区与Survivor区的大小比值。设置为4，则两个Survivor区与一个Eden区的比值为2:4，一个Survivor区占整个年轻代的1/6</li>
+<li><code>-XX:MaxTenuringThreshold=0</code>设置垃圾最大年龄。如果设置为0的话，则年轻代对象不经过Survivor区，直接进入年老代，对于年老代比较多的应用，可以提高效率<ul>
+<li>设置为一个较大值，则年轻代对象会在Survivor区进行多次复制，可以增加对象再年轻代的存活时间</li>
+</ul>
+</li>
+<li>XX:PermSize：设定内存的永久保存区域</li>
+<li>XX:MaxPermSize：设定最大内存的永久保存区域，几乎可用完机器的所有内存</li>
+<li><code>-server</code>下默认MaxPermSize为64m</li>
+<li>MaxPermSize设置过小会导致<code>java.lang.OutOfMemoryError: PermGen space</code></li>
+<li>在JDK1.8中，取消了PermGen，取而代之的是Metaspace<ul>
+<li>举例：<code>-XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=512m</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="_4">回收算法</h3>
+<ul>
+<li><code>–XX:+UseSerialGC</code>强制 java -client 默认会使用, 速度慢。服务器应用不推荐。</li>
+<li><code>–XX:+UseParallelGC</code>linux x64上默认，其他平台要加 -server 才会选用</li>
+<li>young = parallel，多个thread同时copy; old = mark-sweep-compact = 1</li>
+<li>优点：新生代回收更快。因为系统大部分时间做的gc都是新生代的</li>
+<li>缺点：当运行在8G/16G server上old generation live object太多时候pause time过长</li>
+<li><code>–XX:+UseParallelOldGC</code></li>
+<li>young = parallel = 2; old = parallel，分成多个独立的单元，如果单元中live object少则回收，多则跳过</li>
+<li>优点：old generation上性能较 parallel 方式有提高</li>
+<li>缺点：大部分server系统old generation内存占用会达到60%-80%, 没有那么多理想的单元live object很少方便迅速回收，同时compact方面开销比起parallel并没明显减少</li>
+<li><code>–XX:+UseConcMarkSweepGC</code>Concurent Mark-Sweep(CMS) Collector</li>
+<li>young generation = parallel collector = 2; old = cms，同时不做 compact 操作</li>
+<li>优点：pause time会降低, pause敏感</li>
+<li>缺点：cpu占用过多，cpu密集型服务器不适合。另外碎片太多，每个object的存储都要通过链表连续跳n个地方，空间浪费问题也会增大</li>
+</ul>
+<pre><code class="bash"># 查看JVM默认参数中的堆最大值
+java -XX:+PrintFlagsFinal -version | grep HeapSize
+
+# 纯jar启动，适用JDK7
 java \
  -Xmx512M \
  -XX:MaxPermSize=128M \
