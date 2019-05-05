@@ -611,6 +611,42 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-7" type="checkbox" id="nav-3-7">
+    
+    <label class="md-nav__link" for="nav-3-7">
+      大数据
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-7">
+        大数据
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../大数据/cdh_install/" title="Cloudera Distribution Hadoop（CDH）安装教程" class="md-nav__link">
+      Cloudera Distribution Hadoop（CDH）安装教程
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1078,71 +1114,73 @@
 </ul>
 <p><img alt="GC过程示意图" src="../gc.png" /></p>
 <h4 id="_1">案例</h4>
-<pre><code class="bash"># 内存监控的方法
-jmap -heap 2343
-Attaching to process ID 2343, please wait...
+<pre><code class="bash"># 内存监控的方法: jmap -heap pid(查看java 堆（heap）使用情况)
+/usr/java/jdk1.8.0_162/bin/jmap -heap 87303 &gt; jmap_87303.txt
+
+# 内容如下：
+Attaching to process ID 87303, please wait...
 Debugger attached successfully.
 Server compiler detected.
-JVM version is 11.0-b16
+JVM version is 25.162-b12
 
 using thread-local object allocation.
-Parallel GC with 8 thread(s)
+Parallel GC with 23 thread(s)   # GC方式
 
-Heap Configuration:
-   MinHeapFreeRatio = 40
-   MaxHeapFreeRatio = 70
-   MaxHeapSize      = 4294967296 (4096.0MB)
-   NewSize          = 2686976 (2.5625MB)
-   MaxNewSize       = -65536 (-0.0625MB)
-   OldSize          = 5439488 (5.1875MB)
-   NewRatio         = 2                  （YG，OG 大小比为1：2）
-   SurvivorRatio    = 8
-   PermSize         = 21757952 (20.75MB)
-   MaxPermSize      = 268435456 (256.0MB)
+Heap Configuration: # 堆内存初始化配置
+   MinHeapFreeRatio         = 0 # -XX:MinHeapFreeRatio设置JVM堆最小空闲比率(default 40)
+   MaxHeapFreeRatio         = 100   # -XX:MaxHeapFreeRatio设置JVM堆最大空闲比率(default 70)
+   MaxHeapSize              = 536870912 (512.0MB)   # -XX:MaxHeapSize=设置JVM堆的最大
+   NewSize                  = 178782208 (170.5MB)   # -XX:NewSize=设置JVM堆的‘新生代’的默认大小
+   MaxNewSize               = 178782208 (170.5MB)   # -XX:MaxNewSize=设置JVM堆的‘新生代’的最大
+   OldSize                  = 358088704 (341.5MB)   # -XX:OldSize=&lt;value&gt;:设置JVM堆的‘老生代’的大小
+   NewRatio                 = 2 # -XX:NewRatio=:‘新生代’和‘老生代’的大小比
+   SurvivorRatio            = 8 # -XX:SurvivorRatio=设置年轻代中Eden区与Survivor区的大小比
+   MetaspaceSize            = 21807104 (20.796875MB)    # -XX:PermSize=&lt;value&gt;:设置JVM堆的‘永生代’的初始大小（现在是jdk8）
+   CompressedClassSpaceSize = 1073741824 (1024.0MB)
+   MaxMetaspaceSize         = 17592186044415 MB # -XX:MaxPermSize=&lt;value&gt;:设置JVM堆的‘永生代’的最大（现在是jdk8）
+   G1HeapRegionSize         = 0 (0.0MB)
 
-Heap Usage:
+Heap Usage: # 堆内存分布
 PS Young Generation
-Eden Space:
-   capacity = 1260060672 (1201.6875MB)
-   used     = 64868288 (61.86322021484375MB)
-   free     = 1195192384 (1139.8242797851562MB)
-   5.148028935546367% used
-From Space:
-   capacity = 85524480 (81.5625MB)
-   used     = 59457648 (56.70323181152344MB)
-   free     = 26066832 (24.859268188476562MB)
-   69.52120375359195% used
-To Space:
-   capacity = 85852160 (81.875MB)
+Eden Space: # Eden区内存分布
+   capacity = 174587904 (166.5MB)   # Eden区总容量
+   used     = 4099296 (3.909393310546875MB) # Eden区已使用
+   free     = 170488608 (162.59060668945312MB)  #Eden区剩余容量
+   2.3479839702984235% used # Eden区使用比率
+From Space: # Survivor区（A区）的内存分布
+   capacity = 2097152 (2.0MB)
    used     = 0 (0.0MB)
-   free     = 85852160 (81.875MB)
+   free     = 2097152 (2.0MB)
    0.0% used
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~这三块为上面所说的YG大小和使用情况
-PS Old Generation
-   capacity = 2291138560 (2185.0MB)
-   used     = 1747845928 (1666.8757705688477MB)
-   free     = 543292632 (518.1242294311523MB)
-   76.28722062099989% used
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~OG大小和使用情况
-PS Perm Generation
-   capacity = 108265472 (103.25MB)
-   used     = 107650712 (102.6637191772461MB)
-   free     = 614760 (0.5862808227539062MB)
-   99.43217353728436% used
+To Space:   # 另一个Survivor区（B区）的内存分布
+   capacity = 2097152 (2.0MB)
+   used     = 0 (0.0MB)
+   free     = 2097152 (2.0MB)
+   0.0% used
+PS Old Generation   # Old区内存分布
+   capacity = 358088704 (341.5MB)
+   used     = 78736888 (75.08934783935547MB)
+   free     = 279351816 (266.41065216064453MB)
+   21.988095999811264% used
+
+38991 interned Strings occupying 3906872 bytes.
 
 # 这台机器简单说YG内存1G，OG内存2G，总内存4G
 # 在这样的配置下，GC运行情况：
-jstat -gcutil -h5 2343 4s 100
-  S0     S1     E      O      P     YGC     YGCT    FGC    FGCT     GCT  
- 79.82   0.00  75.34  78.55  99.44   7646 1221.668   398 2052.993 3274.661
-  0.00  79.52   0.62  78.63  99.44   7647 1221.782   398 2052.993 3274.775 # 这里发生了一次YG GC，也就是MinorGC，耗时0.12s
-  0.00  79.52  28.95  78.63  99.44   7647 1221.782   398 2052.993 3274.775
-  0.00  79.52  46.34  78.63  99.44   7647 1221.782   398 2052.993 3274.775
+/usr/java/jdk1.8.0_162/bin/jstat -gcutil -h5 87303 4s 100
+  S0     S1     E      O      M     CCS    YGC     YGCT    FGC    FGCT     GCT
+  0.00   0.00   5.51  22.00  98.42  96.83  32997  157.912 32954 4507.634 4665.547
+  0.00   0.00   6.00  22.00  98.42  96.83  32997  157.912 32954 4507.634 4665.547
+  0.00   0.00   6.33  22.00  98.42  96.83  32997  157.912 32954 4507.634 4665.547
+  0.00   0.00   6.94  22.00  98.42  96.83  32997  157.912 32954 4507.634 4665.547
+  0.00   0.00  15.80  22.00  98.42  96.83  32997  157.912 32954 4507.634 4665.547
+  S0     S1     E      O      M     CCS    YGC     YGCT    FGC    FGCT     GCT
+  0.00   0.00  16.37  22.00  98.42  96.83  32997  157.912 32954 4507.634 4665.547   # 发生了一次YG GC，也就是MinorGC，耗时0.3s（4665.847 - 4665.547）
+  0.00   0.00   0.56  22.02  98.42  96.83  32999  157.921 32956 4507.926 4665.847
+  0.00   0.00   1.33  22.02  98.42  96.83  32999  157.921 32956 4507.926 4665.847
+  0.00   0.00   1.75  22.02  98.42  96.83  32999  157.921 32956 4507.926 4665.847
 </code></pre>
 
-<p>同时可以看到总共进行了398次Major GC 总耗时2052.993 所以每次Major GC时间为：2052.993/398=5.16秒
-这是个很严重的问题，进行Major GC的时候程序会暂停，无法响应，居然会暂停5秒多!
-同样Minor GC进行了7647次，总用时1221.782 平均时间为0.16秒，算是可以接受</p>
 <h3 id="_2">小结</h3>
 <ul>
 <li>JVM堆的大小决定了GC的运行时间。如果JVM堆的大小超过一定的限度，那么GC的运行时间会很长。</li>
@@ -1158,9 +1196,9 @@ jstat -gcutil -h5 2343 4s 100
 <li>Xss：每个线程的stack大小（栈），默认每条线程为1M，存放方法调用出参入参的栈、局部变量、标量替换后的局部变量等</li>
 <li>设小点节约内存开更多线程，OS对一个进程内的线程数有限制，不能无限生成，经验值在3000~5000</li>
 <li>有JSON解析之类的递归调用时不能设太小</li>
+<li>Xms：JAVA HEAP的初始值，默认为物理内存的1/64，server端最好Xms与Xmx一样</li>
 <li>Xmx：JAVA HEAP的最大值、默认为物理内存的1/4（只有运行在 server 模式下的时候才是 min(1G, 物理内存的四分之一)）</li>
 <li><code>-Xms2g -Xmx2g</code>比较合适的数值是2-4g，再大就得考虑GC时间</li>
-<li>Xms：JAVA HEAP的初始值，默认为物理内存的1/64，server端最好Xms与Xmx一样</li>
 <li>Xmn：JAVA HEAP young区的大小，默认新生代占堆内存大小的1/3（-XX:NewRatio=2）</li>
 <li><code>-Xmn1g 或 -XX:NewRatio=1</code></li>
 <li><code>-XX:NewRatio=4</code>设置年轻代（包括Eden和两个Survivor区）与年老代的比值（除去持久代）。设置为4，则年轻代与年老代所占比值为1:4，年轻代占整个堆栈的1/5</li>

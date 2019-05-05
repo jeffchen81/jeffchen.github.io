@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="http://www.initcivi.com/01.参考手册/svn/">
+        <link rel="canonical" href="http://www.initcivi.com/02.软件笔记/大数据/cdh_install/">
       
       
       
@@ -33,21 +33,21 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
     
     
       
-        <title>SVN 版本管理 - 初始文明路</title>
+        <title>Cloudera Distribution Hadoop（CDH）安装教程 - 初始文明路</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.3020aac5.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.01ccdecf.js"></script>
+      <script src="../../../assets/javascripts/modernizr.01ccdecf.js"></script>
     
     
       
@@ -56,7 +56,7 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
     
     
     
@@ -77,7 +77,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#svn" tabindex="1" class="md-skip">
+      <a href="#cloudera-distribution-hadoopcdh" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -102,7 +102,7 @@
               初始文明路
             </span>
             <span class="md-header-nav__topic">
-              SVN 版本管理
+              Cloudera Distribution Hadoop（CDH）安装教程
             </span>
           
         </div>
@@ -170,7 +170,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="首页" class="md-nav__link">
+    <a href="../../.." title="首页" class="md-nav__link">
       首页
     </a>
   </li>
@@ -180,12 +180,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
       01.参考手册
@@ -203,7 +201,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../markdown/" title="Markdown语法" class="md-nav__link">
+    <a href="../../../01.参考手册/markdown/" title="Markdown语法" class="md-nav__link">
       Markdown语法
     </a>
   </li>
@@ -213,62 +211,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        SVN 版本管理
-      </label>
-    
-    <a href="./" title="SVN 版本管理" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../../01.参考手册/svn/" title="SVN 版本管理" class="md-nav__link">
       SVN 版本管理
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="常用命令" class="md-nav__link">
-    常用命令
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="参考" class="md-nav__link">
-    参考
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-        <li class="md-nav__item">
-          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
-            Comments
-          </a>
-        </li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -281,10 +228,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       02.软件笔记
@@ -302,7 +251,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../02.软件笔记/mkdocs/" title="MkDocs 静态网页生成" class="md-nav__link">
+    <a href="../../mkdocs/" title="MkDocs 静态网页生成" class="md-nav__link">
       MkDocs 静态网页生成
     </a>
   </li>
@@ -333,7 +282,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../02.软件笔记/js库/iview-admin/" title="基于Vue的后台管理系统前端UI方案" class="md-nav__link">
+    <a href="../../js库/iview-admin/" title="基于Vue的后台管理系统前端UI方案" class="md-nav__link">
       基于Vue的后台管理系统前端UI方案
     </a>
   </li>
@@ -369,7 +318,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../02.软件笔记/jvm系/jvm内存机制和垃圾回收gc/" title="JVM内存机制和垃圾回收GC" class="md-nav__link">
+    <a href="../../jvm系/jvm内存机制和垃圾回收gc/" title="JVM内存机制和垃圾回收GC" class="md-nav__link">
       JVM内存机制和垃圾回收GC
     </a>
   </li>
@@ -405,7 +354,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../02.软件笔记/linux工具/mutt/" title="Mutt 命令行邮件客户端" class="md-nav__link">
+    <a href="../../linux工具/mutt/" title="Mutt 命令行邮件客户端" class="md-nav__link">
       Mutt 命令行邮件客户端
     </a>
   </li>
@@ -417,7 +366,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../02.软件笔记/linux工具/ops_bash/" title="常用运维命令" class="md-nav__link">
+    <a href="../../linux工具/ops_bash/" title="常用运维命令" class="md-nav__link">
       常用运维命令
     </a>
   </li>
@@ -429,7 +378,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../02.软件笔记/linux工具/supervisor/" title="supervisord后台进程管理" class="md-nav__link">
+    <a href="../../linux工具/supervisor/" title="supervisord后台进程管理" class="md-nav__link">
       supervisord后台进程管理
     </a>
   </li>
@@ -465,7 +414,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../02.软件笔记/py库/spiff_workflow/" title="SpiffWorkflow 工作流引擎" class="md-nav__link">
+    <a href="../../py库/spiff_workflow/" title="SpiffWorkflow 工作流引擎" class="md-nav__link">
       SpiffWorkflow 工作流引擎
     </a>
   </li>
@@ -501,7 +450,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../02.软件笔记/中间件/nginx/" title="Nginx 反向代理Web服务器" class="md-nav__link">
+    <a href="../../中间件/nginx/" title="Nginx 反向代理Web服务器" class="md-nav__link">
       Nginx 反向代理Web服务器
     </a>
   </li>
@@ -513,7 +462,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../02.软件笔记/中间件/rabbitmq/" title="RabbitMQ消息中间件" class="md-nav__link">
+    <a href="../../中间件/rabbitmq/" title="RabbitMQ消息中间件" class="md-nav__link">
       RabbitMQ消息中间件
     </a>
   </li>
@@ -525,7 +474,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../02.软件笔记/中间件/rocketmq/" title="RocketMQ 分布式MQ和流平台" class="md-nav__link">
+    <a href="../../中间件/rocketmq/" title="RocketMQ 分布式MQ和流平台" class="md-nav__link">
       RocketMQ 分布式MQ和流平台
     </a>
   </li>
@@ -540,10 +489,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-7" type="checkbox" id="nav-3-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-7" type="checkbox" id="nav-3-7" checked>
     
     <label class="md-nav__link" for="nav-3-7">
       大数据
@@ -559,11 +510,82 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../02.软件笔记/大数据/cdh_install/" title="Cloudera Distribution Hadoop（CDH）安装教程" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Cloudera Distribution Hadoop（CDH）安装教程
+      </label>
+    
+    <a href="./" title="Cloudera Distribution Hadoop（CDH）安装教程" class="md-nav__link md-nav__link--active">
       Cloudera Distribution Hadoop（CDH）安装教程
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="参考" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="环境要求" class="md-nav__link">
+    环境要求
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="安装" class="md-nav__link">
+    安装
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="主机预初始化" class="md-nav__link">
+    主机预初始化
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -602,7 +624,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../03.运维研发/" title="简介" class="md-nav__link">
+    <a href="../../../03.运维研发/" title="简介" class="md-nav__link">
       简介
     </a>
   </li>
@@ -614,7 +636,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../03.运维研发/alarm/" title="告警服务" class="md-nav__link">
+    <a href="../../../03.运维研发/alarm/" title="告警服务" class="md-nav__link">
       告警服务
     </a>
   </li>
@@ -626,7 +648,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../03.运维研发/env_build/" title="Env build" class="md-nav__link">
+    <a href="../../../03.运维研发/env_build/" title="Env build" class="md-nav__link">
       Env build
     </a>
   </li>
@@ -638,7 +660,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../03.运维研发/monitor/" title="监控体系" class="md-nav__link">
+    <a href="../../../03.运维研发/monitor/" title="监控体系" class="md-nav__link">
       监控体系
     </a>
   </li>
@@ -650,7 +672,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../03.运维研发/ops_interview/" title="常见运维面试题目" class="md-nav__link">
+    <a href="../../../03.运维研发/ops_interview/" title="常见运维面试题目" class="md-nav__link">
       常见运维面试题目
     </a>
   </li>
@@ -681,7 +703,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../03.运维研发/CICD/cmdbuild/" title="CMDBuild配置管理平台" class="md-nav__link">
+    <a href="../../../03.运维研发/CICD/cmdbuild/" title="CMDBuild配置管理平台" class="md-nav__link">
       CMDBuild配置管理平台
     </a>
   </li>
@@ -693,7 +715,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../03.运维研发/CICD/gitlab/" title="Gitlab版本管理" class="md-nav__link">
+    <a href="../../../03.运维研发/CICD/gitlab/" title="Gitlab版本管理" class="md-nav__link">
       Gitlab版本管理
     </a>
   </li>
@@ -705,7 +727,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../03.运维研发/CICD/redmine/" title="Redmine需求管理平台" class="md-nav__link">
+    <a href="../../../03.运维研发/CICD/redmine/" title="Redmine需求管理平台" class="md-nav__link">
       Redmine需求管理平台
     </a>
   </li>
@@ -741,7 +763,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../03.运维研发/批量部署/ansible/" title="Ansible自动化部署工具" class="md-nav__link">
+    <a href="../../../03.运维研发/批量部署/ansible/" title="Ansible自动化部署工具" class="md-nav__link">
       Ansible自动化部署工具
     </a>
   </li>
@@ -777,7 +799,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../03.运维研发/监控告警/grafana/" title="Grafana可视化监控仪表盘" class="md-nav__link">
+    <a href="../../../03.运维研发/监控告警/grafana/" title="Grafana可视化监控仪表盘" class="md-nav__link">
       Grafana可视化监控仪表盘
     </a>
   </li>
@@ -837,7 +859,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../04.经济金融/基金/" title="证券投资基金" class="md-nav__link">
+    <a href="../../../04.经济金融/基金/" title="证券投资基金" class="md-nav__link">
       证券投资基金
     </a>
   </li>
@@ -849,7 +871,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../04.经济金融/基金/行业概述/" title="行业概述" class="md-nav__link">
+    <a href="../../../04.经济金融/基金/行业概述/" title="行业概述" class="md-nav__link">
       行业概述
     </a>
   </li>
@@ -886,16 +908,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="常用命令" class="md-nav__link">
-    常用命令
+  <a href="#_1" title="参考" class="md-nav__link">
+    参考
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="参考" class="md-nav__link">
-    参考
+  <a href="#_2" title="环境要求" class="md-nav__link">
+    环境要求
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="安装" class="md-nav__link">
+    安装
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="主机预初始化" class="md-nav__link">
+    主机预初始化
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -922,17 +964,169 @@
               
                 
                 
-                <h1 id="svn">SVN 版本管理</h1>
-<h2 id="_1">常用命令</h2>
+                <h1 id="cloudera-distribution-hadoopcdh">Cloudera Distribution Hadoop（CDH）安装教程</h1>
+<p>基于6.1.1版本，小型集群（20个节点）</p>
+<h2 id="_1">参考</h2>
 <ul>
-<li>检出项目<code>svn checkout http://IP:Port/svn/docs/&lt;项目路径&gt;/ --username=&lt;用户名&gt;</code></li>
-<li>添加文件<code>svn add &lt;文件|目录&gt;</code></li>
-<li>提交远端服务器<code>svn commit -m 'commit msg'</code></li>
+<li>官方手册：<a href="https://www.cloudera.com/documentation/enterprise/6/6.1/topics/installation.html">https://www.cloudera.com/documentation/enterprise/6/6.1/topics/installation.html</a></li>
 </ul>
-<h2 id="_2">参考</h2>
+<h2 id="_2">环境要求</h2>
 <ul>
-<li><a href="http://www.runoob.com/svn/svn-tutorial.html">SVN 教程|菜鸟教程</a></li>
+<li>硬件</li>
+<li>存储<ul>
+<li><code>/usr</code> 1GB</li>
+<li><code>/var</code> &gt; 200GB</li>
+<li><code>/opt</code> &gt; 15GB</li>
+<li><code>/</code> &gt; 100 GB</li>
+<li>挂载硬盘分区 &lt; 12 * 8TB（单个DN &lt; 100TB，单分区 &lt; 8TB）</li>
+<li>文件格式 ext3, ext4</li>
 </ul>
+</li>
+<li>CPU &gt; 4Core，建议 16Core以上</li>
+<li>内存 &gt; 32GB，建议 60GB以上</li>
+<li>软件</li>
+<li>OS<ul>
+<li>CentOS 7.2~7.6; Ubuntu 16.04</li>
+<li>/etc/fstab禁用atime，如<code>/dev/sdb1 /data1 ext4 defaults,noatime 0</code></li>
+<li>重启自动挂载<code>mount -o remount /data1</code></li>
+<li>/etc/security/limits.d/20-nproc.conf放大<code>*    soft    nproc   655350</code></li>
+<li>/etc/hosts支持多域名，小写，如<code>192.168.1.1 cluster-01</code></li>
+<li>关闭SELinux</li>
+<li>关闭防火墙，如iptables</li>
+<li>/etc/sysconfig/network绑定hostname，如<code>HOSTNAME=cluster-01</code></li>
+</ul>
+</li>
+<li>DB<ul>
+<li>MySQL 5.7; PostgreSQL 9.4+; Oracle 12.2</li>
+</ul>
+</li>
+<li>JDK 1.8u31+<ul>
+<li>堆内存 20GB （HDFS|YARN：200主机，4000实例；HBase|Kafka：100主机，3w实例）</li>
+<li>非堆内存 12GB</li>
+</ul>
+</li>
+<li>Python 2.7<ul>
+<li>python-psycopg2</li>
+</ul>
+</li>
+<li>iproute-3.10</li>
+</ul>
+<h2 id="_3">安装</h2>
+<h3 id="_4">主机预初始化</h3>
+<pre><code class="bash"># yum安装
+yum -y install epel-release
+yum -y install vim unzip zip lrzsz tmux httpd zabbix-agent
+
+# py安装，镜像加速
+easy_install -i https://pypi.tuna.tsinghua.edu.cn/simple pip
+
+####################
+# 绑定hostname
+hostname {按实际替换为内部hostname}
+export hname=$(hostname)
+export ip=$(ifconfig | grep inet | grep -v '127.0.0.1' | awk '{print $2}')
+echo &quot;$ip $hname&quot; &gt;&gt; /etc/hosts
+sed -i &quot;s/^HOSTNAME.*$/HOSTNAME=$hname/g&quot; /etc/sysconfig/network
+echo -e &quot;`hostname`&quot;
+
+# 修改/etc/hosts，加入集群相关ip和对应内部域名 略
+
+# ulimit
+# ulimit -HSn 65535
+# echo &quot;ulimit -HSn 65535&quot; &gt;&gt; /etc/rc.local
+
+# 适用centos7
+sed -i &quot;s/4096/65535/g&quot; /etc/security/limits.d/20-nproc.conf
+
+# 统一时区：东8区 (date -R)
+# ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+# ntp时钟
+echo &quot;*/10 * * * * /usr/sbin/ntpdate -u {你的ntp服务地址} &gt; /dev/null 2&gt;&amp;1&quot; &gt;&gt; /var/spool/cron/root
+
+# 安装监控
+# 关闭防火墙
+systemctl stop firewalld.service
+systemctl disable firewalld.service
+# 修改/etc/selinux/config，关闭SELinux（SELINUX=disabled）略
+# yum install -y zabbix-agent
+sed -i 's!Server=.*!Server={你的zabbix服务ip}!' /usr/local/zabbix/etc/zabbix_agentd.conf
+sed -i 's!ServerActive=.*!ServerActive={你的zabbix服务ip}!' /usr/local/zabbix/etc/zabbix_agentd.conf
+service zabbix_agentd restart
+# 上zabbix平台，确认主机自动发现
+
+# 设置swap（/proc/sys/vm/swappiness 默认60 =&gt; 10）为积极使用物理内存
+echo &quot;vm.swappiness = 10&quot; &gt;&gt; /etc/sysctl.conf
+
+# 禁用透明大页（rh6引入，管理内存是动态分配的方式，在real application clusters环境下会导致一些异常的性能问题）
+echo never &gt; /sys/kernel/mm/transparent_hugepage/defrag
+echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled
+# 编辑/etc/rc.d/rc.local，加入
+if test -f /sys/kernel/mm/transparent_hugepage/enabled; then
+  echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled
+fi
+
+if test -f /sys/kernel/mm/transparent_hugepage/defrag; then
+  echo never &gt; /sys/kernel/mm/transparent_hugepage/defrag
+fi
+# 确认/etc/rc.d/rc.local可执行
+chmod +x /etc/rc.d/rc.local
+
+
+####################
+# 添加操作用户cdhtool进root组
+adduser cdhtool
+usermod -a -G root cdhtool
+echo -e &quot;`id cdhtool`&quot;
+
+# 设置目录权限
+mkdir -p /opt/software
+chown cdhtool:cdhtool -R /opt/software/
+
+# httpd开机启动
+systemctl start httpd
+systemctl enable httpd.service
+
+# datanode上，初始化磁盘，并挂载
+
+# 重启
+reboot
+
+#################### 后续安装以cdhtool为主
+su - cdhtool
+# 中控key复制到每个节点主机上
+mkdir .ssh
+echo '{中控公钥}' &gt;&gt; ~/.ssh/authorized_keys
+chmod 700 ~/.ssh/
+chmod 600 ~/.ssh/authorized_keys
+
+###################
+# 下载相关软件
+mkdir -p /opt/software
+cd /opt/software
+
+# mysql5.7
+wget https://cdn.mysql.com//Downloads/MySQL-5.7/mysql-5.7.26-linux-glibc2.12-x86_64.tar.gz
+
+# cloudera manager
+wget https://archive.cloudera.com/cm6/6.1.1/redhat7/yum/RPMS/x86_64/cloudera-manager-agent-6.1.1-853290.el7.x86_64.rpm \
+https://archive.cloudera.com/cm6/6.1.1/redhat7/yum/RPMS/x86_64/cloudera-manager-server-6.1.1-853290.el7.x86_64.rpm \
+https://archive.cloudera.com/cm6/6.1.1/redhat7/yum/RPMS/x86_64/cloudera-manager-daemons-6.1.1-853290.el7.x86_64.rpm
+https://archive.cloudera.com/cm6/6.1.1/redhat7/yum/RPMS/x86_64/cloudera-manager-server-db-2-6.1.1-853290.el7.x86_64.rpm \
+https://archive.cloudera.com/cm6/6.1.1/redhat7/yum/RPMS/x86_64/enterprise-debuginfo-6.1.1-853290.el7.x86_64.rpm \
+https://archive.cloudera.com/cm6/6.1.1/redhat7/yum/RPMS/x86_64/oracle-j2sdk1.8-1.8.0+update181-1.x86_64.rpm
+
+wget https://archive.cloudera.com/cm6/6.1.1/allkeys.asc
+
+# cdh6
+wget https://archive.cloudera.com/cdh6/6.1.1/parcels/CDH-6.1.1-1.cdh6.1.1.p0.875250-el7.parcel \
+https://archive.cloudera.com/cdh6/6.1.1/parcels/CDH-6.1.1-1.cdh6.1.1.p0.875250-el7.parcel.sha256 \
+https://archive.cloudera.com/cdh6/6.1.1/parcels/manifest.json
+
+
+# TODO 安装jkd8
+
+</code></pre>
                 
                   
                 
@@ -945,9 +1139,9 @@
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {
-      this.page.url = "http://www.initcivi.com/01.参考手册/svn/";
+      this.page.url = "http://www.initcivi.com/02.软件笔记/大数据/cdh_install/";
       this.page.identifier =
-        "/01.参考手册/svn/";
+        "/02.软件笔记/大数据/cdh_install/";
     };
     (function() {
       var d = document, s = d.createElement("script");
@@ -969,7 +1163,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../markdown/" title="Markdown语法" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../中间件/rocketmq/" title="RocketMQ 分布式MQ和流平台" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -978,19 +1172,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Markdown语法
+                RocketMQ 分布式MQ和流平台
               </span>
             </div>
           </a>
         
         
-          <a href="../../02.软件笔记/mkdocs/" title="MkDocs 静态网页生成" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../../03.运维研发/" title="简介" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                MkDocs 静态网页生成
+                简介
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -1018,9 +1212,9 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.267712eb.js"></script>
+      <script src="../../../assets/javascripts/application.267712eb.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
     
   </body>
