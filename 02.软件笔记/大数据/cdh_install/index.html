@@ -887,6 +887,66 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      05.开源项目
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        05.开源项目
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-1" type="checkbox" id="nav-6-1">
+    
+    <label class="md-nav__link" for="nav-6-1">
+      Stock starer股票盯盘
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-1">
+        Stock starer股票盯盘
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../05.开源项目/stock-starer股票盯盘/readme/" title="Stock Starer股票盯盘" class="md-nav__link">
+      Stock Starer股票盯盘
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -1062,13 +1122,8 @@ echo &quot;vm.swappiness = 10&quot; &gt;&gt; /etc/sysctl.conf
 echo never &gt; /sys/kernel/mm/transparent_hugepage/defrag
 echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled
 # 编辑/etc/rc.d/rc.local，加入
-if test -f /sys/kernel/mm/transparent_hugepage/enabled; then
-  echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled
-fi
-
-if test -f /sys/kernel/mm/transparent_hugepage/defrag; then
-  echo never &gt; /sys/kernel/mm/transparent_hugepage/defrag
-fi
+if test -f /sys/kernel/mm/transparent_hugepage/enabled; then echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled fi
+if test -f /sys/kernel/mm/transparent_hugepage/defrag; then echo never &gt; /sys/kernel/mm/transparent_hugepage/defrag fi
 # 确认/etc/rc.d/rc.local可执行
 chmod +x /etc/rc.d/rc.local
 
@@ -1078,6 +1133,10 @@ chmod +x /etc/rc.d/rc.local
 adduser cdhtool
 usermod -a -G root cdhtool
 echo -e &quot;`id cdhtool`&quot;
+# 开cdhtool免密
+vim /etc/sudoers
+# 最后行添加，wq!保存
+cdhtool    ALL=(ALL)       NOPASSWD:ALL
 
 # 设置目录权限
 mkdir -p /opt/software
@@ -1087,7 +1146,7 @@ chown cdhtool:cdhtool -R /opt/software/
 systemctl start httpd
 systemctl enable httpd.service
 
-# datanode上，初始化磁盘，并挂载
+# datanode上，数据盘做raid0，并挂载/data
 
 # 重启
 reboot
@@ -1096,7 +1155,7 @@ reboot
 su - cdhtool
 # 中控key复制到每个节点主机上
 mkdir .ssh
-echo '{中控公钥}' &gt;&gt; ~/.ssh/authorized_keys
+echo '{你的中控公钥}' &gt;&gt; ~/.ssh/authorized_keys
 chmod 700 ~/.ssh/
 chmod 600 ~/.ssh/authorized_keys
 

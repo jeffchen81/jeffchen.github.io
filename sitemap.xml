@@ -2,132 +2,137 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>http://www.initcivi.com/</loc>
-     <lastmod>2019-05-05</lastmod>
+     <lastmod>2019-05-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.initcivi.com/01.参考手册/markdown/</loc>
-     <lastmod>2019-05-05</lastmod>
+     <lastmod>2019-05-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.initcivi.com/01.参考手册/svn/</loc>
-     <lastmod>2019-05-05</lastmod>
+     <lastmod>2019-05-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.initcivi.com/02.软件笔记/mkdocs/</loc>
-     <lastmod>2019-05-05</lastmod>
+     <lastmod>2019-05-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.initcivi.com/02.软件笔记/js库/iview-admin/</loc>
-     <lastmod>2019-05-05</lastmod>
+     <lastmod>2019-05-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.initcivi.com/02.软件笔记/jvm系/jvm内存机制和垃圾回收gc/</loc>
-     <lastmod>2019-05-05</lastmod>
+     <lastmod>2019-05-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.initcivi.com/02.软件笔记/linux工具/mutt/</loc>
-     <lastmod>2019-05-05</lastmod>
+     <lastmod>2019-05-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.initcivi.com/02.软件笔记/linux工具/ops_bash/</loc>
-     <lastmod>2019-05-05</lastmod>
+     <lastmod>2019-05-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.initcivi.com/02.软件笔记/linux工具/supervisor/</loc>
-     <lastmod>2019-05-05</lastmod>
+     <lastmod>2019-05-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.initcivi.com/02.软件笔记/py库/spiff_workflow/</loc>
-     <lastmod>2019-05-05</lastmod>
+     <lastmod>2019-05-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.initcivi.com/02.软件笔记/中间件/nginx/</loc>
-     <lastmod>2019-05-05</lastmod>
+     <lastmod>2019-05-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.initcivi.com/02.软件笔记/中间件/rabbitmq/</loc>
-     <lastmod>2019-05-05</lastmod>
+     <lastmod>2019-05-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.initcivi.com/02.软件笔记/中间件/rocketmq/</loc>
-     <lastmod>2019-05-05</lastmod>
+     <lastmod>2019-05-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.initcivi.com/02.软件笔记/大数据/cdh_install/</loc>
-     <lastmod>2019-05-05</lastmod>
+     <lastmod>2019-05-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.initcivi.com/03.运维研发/</loc>
-     <lastmod>2019-05-05</lastmod>
+     <lastmod>2019-05-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.initcivi.com/03.运维研发/alarm/</loc>
-     <lastmod>2019-05-05</lastmod>
+     <lastmod>2019-05-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.initcivi.com/03.运维研发/env_build/</loc>
-     <lastmod>2019-05-05</lastmod>
+     <lastmod>2019-05-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.initcivi.com/03.运维研发/monitor/</loc>
-     <lastmod>2019-05-05</lastmod>
+     <lastmod>2019-05-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.initcivi.com/03.运维研发/ops_interview/</loc>
-     <lastmod>2019-05-05</lastmod>
+     <lastmod>2019-05-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.initcivi.com/03.运维研发/CICD/cmdbuild/</loc>
-     <lastmod>2019-05-05</lastmod>
+     <lastmod>2019-05-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.initcivi.com/03.运维研发/CICD/gitlab/</loc>
-     <lastmod>2019-05-05</lastmod>
+     <lastmod>2019-05-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.initcivi.com/03.运维研发/CICD/redmine/</loc>
-     <lastmod>2019-05-05</lastmod>
+     <lastmod>2019-05-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.initcivi.com/03.运维研发/批量部署/ansible/</loc>
-     <lastmod>2019-05-05</lastmod>
+     <lastmod>2019-05-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.initcivi.com/03.运维研发/监控告警/grafana/</loc>
-     <lastmod>2019-05-05</lastmod>
+     <lastmod>2019-05-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.initcivi.com/04.经济金融/基金/</loc>
-     <lastmod>2019-05-05</lastmod>
+     <lastmod>2019-05-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.initcivi.com/04.经济金融/基金/行业概述/</loc>
-     <lastmod>2019-05-05</lastmod>
+     <lastmod>2019-05-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://www.initcivi.com/05.开源项目/stock-starer股票盯盘/readme/</loc>
+     <lastmod>2019-05-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
